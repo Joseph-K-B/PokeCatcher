@@ -20,11 +20,11 @@ test('test of showPokemon should create result object if no pokemon present', ex
 });
 
 test('showPokemon should increment outcomes object if pokemon was shown prior', expect =>{
-    const fakeOutcome = {
+    const fakeOutcome = [{
         id: 1,
         shown: 1,
         preferred: 0
-    };
+    }];
     localStorage.setItem('Outcome', JSON.stringify(fakeOutcome));
     showPokemon(1);
 
