@@ -1,6 +1,6 @@
-// import functions
+
 import pokemonData from './pokemon.js';
-// reference needed DOM elements
+
 const pokemon1Radio = document.getElementById('pokemon1-radio');
 const pokemon1Image = document.getElementById('pokemon1-image');
 
@@ -11,7 +11,7 @@ const pokemon3Radio = document.getElementById('pokemon3-radio');
 const pokemon3Image = document.getElementById('pokemon3-image');
 
 const pokeBall = document.getElementById('choice');
-//initialize state
+
 let totalPlays = 0;
 
 function renderRandomPokemon(){
@@ -29,31 +29,25 @@ function renderRandomPokemon(){
         randomNum3 = Math.floor(Math.random() * pokemonData.length);
     }
 
-    console.log(pokemonData);
     let pokemon1 = pokemonData[randomNum1];
-    console.log(randomNum1);
-    console.log(pokemon1);
     let pokemon2 = pokemonData[randomNum2];
     let pokemon3 = pokemonData[randomNum3];
     
     pokemon1Radio.value = pokemon1.id;
     pokemon1Radio.checked = false;
-    pokemon1Image.src = `x${pokemon1Image}`;
+    pokemon1Image.src = pokemon1.url_image;
 
     pokemon2Radio.value = pokemon2.id;
     pokemon2Radio.checked = false;
-    pokemon2Image.src = `y${pokemon2Image}`;
+    pokemon2Image.src = pokemon2.url_image;
 
     pokemon3Radio.value = pokemon3.id;
     pokemon3Radio.checked = false;
-    pokemon3.src = `z${pokemon3Image}`;
+    pokemon3Image.src = pokemon3.url_image;
 }
 
 renderRandomPokemon();
-  // set event listeners 
-  // get user input(s)
-  // do any needed work with the value(s)
-  // update DOM to reflect new value(s)
+
 pokeBall.addEventListener('click', ()=>{
     if (totalPlays < 2) {
         renderRandomPokemon();

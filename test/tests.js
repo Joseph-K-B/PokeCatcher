@@ -30,5 +30,11 @@ test('showPokemon should increment outcomes object if pokemon was shown prior', 
 
     const outcomeString = localStorage.getItem('Outcome') || '[]';
     const outcomes = JSON.parse(outcomeString);
-    expect.deepEqual(outcomes[0], fakeOutcome);
+
+    const expected = {
+        id: 1,
+        shown: 2,
+        preferred: 0
+    };
+    expect.deepEqual(outcomes[0], expected);
 });

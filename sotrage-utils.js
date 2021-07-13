@@ -21,5 +21,5 @@ export function showPokemon(id){
     } else {
         pokemon.shown++;
     }
-    localStorage.setItem('Result', JSON.stringify(results));
+    localStorage.setItem('Outcome', JSON.stringify(results));
 }
