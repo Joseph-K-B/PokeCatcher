@@ -16,12 +16,10 @@ main{
     background-image: linear-gradient(red, white);
 }
 .pokemon-options{
-    margin: 5%;
+    margin: 20px;
     display: flex;
-    flex-direction: row;
     width: 70%;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
 }
 
 .pokemon img {
@@ -48,6 +46,10 @@ input[type=radio]:checked + img {
     width: 25%;
 }
 button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 25%;
     width: 55%;
     border-radius: 50%;
