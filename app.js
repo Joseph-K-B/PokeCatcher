@@ -38,15 +38,15 @@ function renderRandomPokemon(){
     
     pokemon1Radio.value = pokemon1.id;
     pokemon1Radio.checked = false;
-    pokemon1Image.src = `./pokemon.js${pokemon1Image}`;
+    pokemon1Image.src = `x${pokemon1Image}`;
 
     pokemon2Radio.value = pokemon2.id;
     pokemon2Radio.checked = false;
-    pokemon2Image.src = `./home.css/${pokemon2Image}`;
+    pokemon2Image.src = `y${pokemon2Image}`;
 
     pokemon3Radio.value = pokemon3.id;
     pokemon3Radio.checked = false;
-    pokemon3.src = `pokemon.js${pokemon3Image}`;
+    pokemon3.src = `z${pokemon3Image}`;
 }
 
 renderRandomPokemon();
@@ -54,3 +54,10 @@ renderRandomPokemon();
   // get user input(s)
   // do any needed work with the value(s)
   // update DOM to reflect new value(s)
+pokeBall.addEventListener('click', ()=>{
+    if (totalPlays < 2) {
+        renderRandomPokemon();
+    } else {
+        window.location.replace('./results');
+    }
+});

@@ -1,19 +1,34 @@
 // IMPORT MODULES under test here:
 // import { add } from '../calculator.js';
+import { showPokemon } from '../sotrage-utils.js';
 
 const test = QUnit.test;
 
-// name your test by what it is testing
-test('time to test a function', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
-    const expected = true;
-    
-    //Act 
-    // Call the function you're testing and set the result to a const
-    const actual = true; // use your function here
+test('test of showPokemon should create result object if no pokemon present', expect =>{
+    localStorage.removeItem('Outcome');
+    const fakeOutcome = {
+        id: 1,
+        shown: 1,
+        preferred: 0
+    };
 
-    //Expect
-    // Make assertions about what is expected versus the actual result
-    expect.equal(actual, expected);
+    showPokemon(1);
+
+    const outcomeString = localStorage.getItem('Outcome') || '[]';
+    const outcomes = JSON.parse(outcomeString);
+    expect.deepEqual(outcomes[0], fakeOutcome);
+});
+
+test('showPokemon should increment outcomes object if pokemon was shown prior', expect =>{
+    const fakeOutcome = {
+        id: 1,
+        shown: 1,
+        preferred: 0
+    };
+    localStorage.setItem('Outcome', JSON.stringify(fakeOutcome));
+    showPokemon(1);
+
+    const outcomeString = localStorage.getItem('Outcome') || '[]';
+    const outcomes = JSON.parse(outcomeString);
+    expect.deepEqual(outcomes[0], fakeOutcome);
 });
