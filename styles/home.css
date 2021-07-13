@@ -1,0 +1,23 @@
+.pokemon-options{
+    margin:20px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-around;
+}
+
+.pokemon img {
+    height: 150px;
+    filter:sepia(100%);
+}
+.pokemon img:hover {
+    filter: none;
+    border: 5px solid black;
+}
+input[type=radio] {
+    display: none;
+}
+input[type=radio] {
+    border: 5px solid black;
+    filter: none;
+}
