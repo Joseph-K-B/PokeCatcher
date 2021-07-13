@@ -49,7 +49,7 @@ function renderRandomPokemon(){
 renderRandomPokemon();
 
 pokeBall.addEventListener('click', ()=>{
-    if (totalPlays < 2) {
+    if (totalPlays < 10) {
         renderRandomPokemon();
     } else {
         window.location.replace('./results');

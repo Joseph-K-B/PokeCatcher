@@ -1,23 +1,57 @@
+header{
+    background-color: rgb(47, 46, 46);
+    color: rgb(231, 231, 231);
+}
+h1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.75rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+main{
+    background-image: linear-gradient(red, white);
+}
 .pokemon-options{
-    margin:20px;
+    margin: 5%;
     display: flex;
     flex-direction: row;
     width: 70%;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .pokemon img {
     height: 150px;
     filter:sepia(100%);
+    border-radius: 45%;
+    
 }
 .pokemon img:hover {
     filter: none;
     border: 5px solid black;
+    box-shadow: 100%;
 }
 input[type=radio] {
     display: none;
 }
-input[type=radio] {
+input[type=radio]:checked + img {
     border: 5px solid black;
     filter: none;
+}
+
+#poke-ball-image{
+    height: 25%;
+    width: 25%;
+}
+button{
+    height: 25%;
+    width: 55%;
+    border-radius: 50%;
+}
+button:hover{
+    border: 10px solid black;
 }
