@@ -8,6 +8,7 @@ let names = [];
 let shown = [];
 let preffered = [];
 
+
 for (let item of results) {
 
     const pokemon = findById(pokemonData, item.id);
@@ -22,15 +23,19 @@ for (let item of results) {
     shownText.textContent = `Shown: ${item.shown}`;
 
     const prefferedText = document.createElement('p');
-    prefferedText.textContent = `Preffered: ${item.preffered}`;
+    prefferedText.textContent = `Preffered: ${item.choice}`;
+
+    const nameText = document.createElement('p');
+    nameText.textContent = `Pokemon: ${item.pokemon}`;
 
     const resultDiv = document.createElement('div');
-    resultDiv.classList.add('result');
+    resultDiv.classList.add('Outcome');
 
     resultDiv.appendChild(pokeImage);
     resultDiv.appendChild(shownText);
     resultDiv.appendChild(prefferedText);
-    
+    resultDiv.appendChild(nameText);
+
     resultData.appendChild(resultDiv);
 }
 

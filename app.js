@@ -61,7 +61,7 @@ pokeBall.addEventListener('click', ()=>{
     const selectedId = Number(selectedPokemon.value);
     pickPokemon(selectedId);
 
-    if (totalPlays < 5) {
+    if (totalPlays < 2) {
         renderRandomPokemon();
     } else {
         window.location.replace('../results/results.html');
