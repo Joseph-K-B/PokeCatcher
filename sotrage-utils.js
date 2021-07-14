@@ -5,10 +5,16 @@ function findById(items, id){
         }
     }
 }
-
-export function showPokemon(id){
+export function setResults(resultsArray){
+    localStorage.setItem('Outcome', JSON.stringify(resultsArray));
+}
+export function getResults(){
     const resultsString = localStorage.getItem('Outcome') || '[]';
     const results = JSON.parse(resultsString);
+    return results;
+}
+export function showPokemon(id){
+    const results = getResults();
     const pokemon = findById(results, id);
 
     if (!pokemon){
@@ -21,5 +27,12 @@ export function showPokemon(id){
     } else {
         pokemon.shown++;
     }
-    localStorage.setItem('Outcome', JSON.stringify(results));
+    setResults(results);
+}
+
+export function pickPokemon(id){
+    const results = getResults();
+    const pokemon = findById(results, id);
+    pokemon.preferred++;
+    setResults(results);
 }

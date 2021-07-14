@@ -1,5 +1,7 @@
 
 import pokemonData from './pokemon.js';
+import { pickPokemon, showPokemon } from './sotrage-utils.js';
+
 
 const pokemon1Radio = document.getElementById('pokemon1-radio');
 const pokemon1Image = document.getElementById('pokemon1-image');
@@ -32,24 +34,34 @@ function renderRandomPokemon(){
     let pokemon1 = pokemonData[randomNum1];
     let pokemon2 = pokemonData[randomNum2];
     let pokemon3 = pokemonData[randomNum3];
+
+    showPokemon(pokemon1.id);
+    showPokemon(pokemon2.id);
+    showPokemon(pokemon3.id);
     
     pokemon1Radio.value = pokemon1.id;
-    pokemon1Radio.checked = false;
+    // pokemon1Radio.checked = false;
     pokemon1Image.src = pokemon1.url_image;
 
     pokemon2Radio.value = pokemon2.id;
-    pokemon2Radio.checked = false;
+    // pokemon2Radio.checked = false;
     pokemon2Image.src = pokemon2.url_image;
 
     pokemon3Radio.value = pokemon3.id;
-    pokemon3Radio.checked = false;
+    // pokemon3Radio.checked = false;
     pokemon3Image.src = pokemon3.url_image;
 }
+
+localStorage.removeItem('Outcome');
 
 renderRandomPokemon();
 
 pokeBall.addEventListener('click', ()=>{
-    if (totalPlays < 10) {
+    const selectedPokemon = document.querySelector('input[type=radio]:checked');
+    const selectedId = Number(selectedPokemon.value);
+    pickPokemon(selectedId);
+
+    if (totalPlays < 5) {
         renderRandomPokemon();
     } else {
         window.location.replace('./results');
