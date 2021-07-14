@@ -64,6 +64,6 @@ pokeBall.addEventListener('click', ()=>{
     if (totalPlays < 5) {
         renderRandomPokemon();
     } else {
-        window.location.replace('./results');
+        window.location.replace('./results/results.html');
     }
 });

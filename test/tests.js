@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { add } from '../calculator.js';
-import { showPokemon } from '../sotrage-utils.js';
+import { showPokemon, setResults, getResults, pickPokemon } from '../sotrage-utils.js';
 
 const test = QUnit.test;
 
@@ -38,3 +38,38 @@ test('showPokemon should increment outcomes object if pokemon was shown prior', 
     };
     expect.deepEqual(outcomes[0], expected);
 });
+
+test('getResults should return parsed Outcome from localStorage', expect =>{
+    const fakeOutcome = [{
+        id: 1,
+        shown: 1,
+        preferred: 0
+    }];
+    setResults(fakeOutcome);
+    const expected = getResults();
+    expect.deepEqual(expected, fakeOutcome);
+});
+
+test ('getResults should return empty if no Outcome', expect =>{
+    localStorage.removeItem('Outcome');
+    const expected = getResults();
+    expect.deepEqual(expected, []);
+});
+
+test ('pickPokemon should increment results preferred attribute', expect=>{
+    const fakeOutcome = [{
+        id: 1,
+        shown: 1,
+        preferred: 0
+    }];
+    setResults(fakeOutcome);
+    pickPokemon(1);
+    const results = getResults();
+    const expected = {
+        id: 1,
+        shown: 1,
+        preferred: 1
+    };
+    expect.deepEqual(results[0], expected);
+});
+
