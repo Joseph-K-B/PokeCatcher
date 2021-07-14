@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { add } from '../calculator.js';
-import { showPokemon, setResults, getResults, pickPokemon } from '../sotrage-utils.js';
+import { showPokemon, setResults, getResults, pickPokemon } from '../storage-utils.js';
 
 const test = QUnit.test;
 

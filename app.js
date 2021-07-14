@@ -1,6 +1,6 @@
 
 import pokemonData from './pokemon.js';
-import { pickPokemon, showPokemon } from './sotrage-utils.js';
+import { pickPokemon, showPokemon } from './storage-utils.js';
 
 
 const pokemon1Radio = document.getElementById('pokemon1-radio');
@@ -64,6 +64,6 @@ pokeBall.addEventListener('click', ()=>{
     if (totalPlays < 5) {
         renderRandomPokemon();
     } else {
-        window.location.replace('./results/results.html');
+        window.location.replace('../results/results.html');
     }
 });
