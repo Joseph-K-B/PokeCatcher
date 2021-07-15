@@ -1,5 +1,6 @@
 import { getResults, findById } from '../storage-utils.js';
 import pokemonData from '../pokemon.js';
+import pokemon from '../pokemon.js';
 
 const resultData = document.getElementById('results-data');
 
@@ -49,10 +50,10 @@ var ctx = document.getElementById('myChart').getContext('2d');
 new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: name,
         datasets: [{
             label: 'Shown',
-            data: [12, 19, 3, 5, 2, 3],
+            data: shown,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
