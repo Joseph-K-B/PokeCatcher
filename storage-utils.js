@@ -21,7 +21,6 @@ export function showPokemon(id){
     
     if (!pokemon){
         let findPokemon = findById(pokemonData, id);
-        console.log(findPokemon);
         const newPokemon = {
             id: id,
             shown: 1,
