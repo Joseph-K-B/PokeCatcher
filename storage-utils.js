@@ -24,7 +24,7 @@ export function showPokemon(id){
         const newPokemon = {
             id: id,
             shown: 1,
-            preferred: 0,
+            captured: 0,
             pokemon: findPokemon.pokemon
             
         };
@@ -38,6 +38,6 @@ export function showPokemon(id){
 export function pickPokemon(id){
     const results = getResults();
     const pokemon = findById(results, id);
-    pokemon.preferred++;
+    pokemon.captured++;
     setResults(results);
 }

@@ -6,7 +6,7 @@ const resultData = document.getElementById('results-data');
 const results = getResults();
 let name = [];
 let shown = [];
-let preferred = [];
+let captured = [];
 
 
 for (let item of results) {
@@ -14,7 +14,7 @@ for (let item of results) {
     const pokemons = findById(pokemonData, item.id);
     name.push(pokemons.pokemon);
     shown.push(item.shown);
-    preferred.push(item.preferred);
+    captured.push(item.captured);
 
     const pokeImage = document.createElement('img');
     pokeImage.src = pokemons.url_image;
@@ -22,8 +22,8 @@ for (let item of results) {
     const shownText = document.createElement('p');
     shownText.textContent = `Shown: ${item.shown}`;
 
-    const preferredText = document.createElement('p');
-    preferredText.textContent = `Preffered: ${item.preferred}`;
+    const capturedText = document.createElement('p');
+    capturedText.textContent = `Captured: ${item.captured}`;
     
     const nameText = document.createElement('p');
     nameText.textContent = `Pokemon: ${item.pokemon}`;
@@ -33,7 +33,7 @@ for (let item of results) {
 
     resultDiv.appendChild(pokeImage);
     resultDiv.appendChild(shownText);
-    resultDiv.appendChild(preferredText);
+    resultDiv.appendChild(capturedText);
     resultDiv.appendChild(nameText);
 
     resultData.appendChild(resultDiv);
