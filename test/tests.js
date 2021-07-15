@@ -10,7 +10,7 @@ test('test of showPokemon should create result object if no pokemon present', ex
         id: 1,
         pokemon: 'bulbasaur',
         shown: 1,
-        preferred: 0
+        captured: 0
     };
 
     showPokemon(1);
@@ -24,7 +24,7 @@ test('showPokemon should increment outcomes object if pokemon was shown prior', 
     const fakeOutcome = [{
         id: 1,
         shown: 1,
-        preferred: 0
+        captured: 0
     }];
     localStorage.setItem('Outcome', JSON.stringify(fakeOutcome));
     showPokemon(1);
@@ -35,7 +35,7 @@ test('showPokemon should increment outcomes object if pokemon was shown prior', 
     const expected = {
         id: 1,
         shown: 2,
-        preferred: 0
+        captured: 0
     };
     expect.deepEqual(outcomes[0], expected);
 });
@@ -44,7 +44,7 @@ test('getResults should return parsed Outcome from localStorage', expect =>{
     const fakeOutcome = [{
         id: 1,
         shown: 1,
-        preferred: 0
+        captured: 0
     }];
     setResults(fakeOutcome);
     const expected = getResults();
@@ -61,7 +61,7 @@ test ('pickPokemon should increment results preferred attribute', expect=>{
     const fakeOutcome = [{
         id: 1,
         shown: 1,
-        preferred: 0
+        captured: 0
     }];
     setResults(fakeOutcome);
     pickPokemon(1);
@@ -69,7 +69,7 @@ test ('pickPokemon should increment results preferred attribute', expect=>{
     const expected = {
         id: 1,
         shown: 1,
-        preferred: 1
+        captured: 1
     };
     expect.deepEqual(results[0], expected);
 });
