@@ -1,6 +1,6 @@
 import { getResults, findById } from '../storage-utils.js';
 import pokemonData from '../pokemon.js';
-import pokemon from '../pokemon.js';
+// import pokemon from '../pokemon.js';
 
 const resultData = document.getElementById('results-data');
 
@@ -58,33 +58,22 @@ new Chart(ctx, {
                 'black',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'white',
+               
             ],
-            borderWidth: 1 },
+            borderWidth: 3 },
         { label: 'Captured',
             data: captured,
             backgroundColor: [
                 'red',
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'white',
+                
             ],
-            borderWidth: 1
-        
+            borderWidth: 3
         }]
     },
-    
-    
     options: {
         scales: {
             y: {
