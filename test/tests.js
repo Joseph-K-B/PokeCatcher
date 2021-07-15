@@ -8,6 +8,7 @@ test('test of showPokemon should create result object if no pokemon present', ex
     localStorage.removeItem('Outcome');
     const fakeOutcome = {
         id: 1,
+        pokemon: 'bulbasaur',
         shown: 1,
         preferred: 0
     };
