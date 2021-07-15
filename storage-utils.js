@@ -1,3 +1,5 @@
+import pokemonData from './pokemon.js';
+
 export function findById(items, id){
     for (const item of items){
         if (item.id === id){
@@ -16,12 +18,16 @@ export function getResults(){
 export function showPokemon(id){
     const results = getResults();
     const pokemon = findById(results, id);
-
+    
     if (!pokemon){
+        let findPokemon = findById(pokemonData, id);
+        console.log(findPokemon);
         const newPokemon = {
             id: id,
             shown: 1,
-            preferred: 0
+            preferred: 0,
+            pokemon: findPokemon.pokemon
+            
         };
         results.push(newPokemon);
     } else {

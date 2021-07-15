@@ -4,43 +4,45 @@ import pokemonData from '../pokemon.js';
 const resultData = document.getElementById('results-data');
 
 const results = getResults();
-let names = [];
+let name = [];
 let shown = [];
-let preffered = [];
+let preferred = [];
 
 
 for (let item of results) {
 
-    const pokemon = findById(pokemonData, item.id);
-    names.push(pokemon.pokemon);
+    const pokemons = findById(pokemonData, item.id);
+    name.push(pokemons.pokemon);
     shown.push(item.shown);
-    preffered.push(item.preffered);
+    preferred.push(item.preferred);
 
     const pokeImage = document.createElement('img');
-    pokeImage.src = pokemonData.url_image;
+    pokeImage.src = pokemons.url_image;
 
     const shownText = document.createElement('p');
     shownText.textContent = `Shown: ${item.shown}`;
 
-    const prefferedText = document.createElement('p');
-    prefferedText.textContent = `Preffered: ${item.choice}`;
-
+    const preferredText = document.createElement('p');
+    preferredText.textContent = `Preffered: ${item.preferred}`;
+    
     const nameText = document.createElement('p');
     nameText.textContent = `Pokemon: ${item.pokemon}`;
-
+    
     const resultDiv = document.createElement('div');
-    resultDiv.classList.add('Outcome');
+    resultDiv.classList.add('result');
 
     resultDiv.appendChild(pokeImage);
     resultDiv.appendChild(shownText);
-    resultDiv.appendChild(prefferedText);
+    resultDiv.appendChild(preferredText);
     resultDiv.appendChild(nameText);
 
     resultData.appendChild(resultDiv);
 }
 
-
-
+const playAgainBtn = document.getElementById('home-button');
+playAgainBtn.addEventListener('click', ()=>{
+    window.location.replace('../index.html');
+});
 
 
 var ctx = document.getElementById('myChart').getContext('2d');

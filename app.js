@@ -40,15 +40,15 @@ function renderRandomPokemon(){
     showPokemon(pokemon3.id);
     
     pokemon1Radio.value = pokemon1.id;
-    // pokemon1Radio.checked = false;
+    pokemon1Radio.checked = false;
     pokemon1Image.src = pokemon1.url_image;
 
     pokemon2Radio.value = pokemon2.id;
-    // pokemon2Radio.checked = false;
+    pokemon2Radio.checked = false;
     pokemon2Image.src = pokemon2.url_image;
 
     pokemon3Radio.value = pokemon3.id;
-    // pokemon3Radio.checked = false;
+    pokemon3Radio.checked = false;
     pokemon3Image.src = pokemon3.url_image;
 }
 
@@ -64,6 +64,6 @@ pokeBall.addEventListener('click', ()=>{
     if (totalPlays < 2) {
         renderRandomPokemon();
     } else {
-        window.location.replace('../results/results.html');
+        window.location.replace('./results/index.html');
     }
 });
